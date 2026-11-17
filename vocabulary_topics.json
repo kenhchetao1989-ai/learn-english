@@ -1,0 +1,850 @@
+{
+  "topics": [
+    {
+      "id": "numbers",
+      "name": "Numbers 1-10",
+      "name_vi": "Số 1-10",
+      "words": [
+        {
+          "en": "one",
+          "vi": "một",
+          "description": "Số 1 – con số nhỏ nhất khi đếm, dùng khi chỉ có một vật, ví dụ một quả táo.",
+          "description_en": "Number 1 – the smallest counting number, used when there is only a single thing.",
+          "example": "I have one apple.",
+          "example_vi": "Tôi có 1 quả táo."
+        },
+        {
+          "en": "two",
+          "vi": "hai",
+          "description": "Số 2 – đứng sau số 1, dùng để đếm một đôi, như hai mắt, hai tay.",
+          "description_en": "Number 2 – comes after 1, used for a pair, like your eyes or your hands.",
+          "example": "She has two cats.",
+          "example_vi": "Cô ấy có 2 con mèo."
+        },
+        {
+          "en": "three",
+          "vi": "ba",
+          "description": "Số 3 – đứng sau số 2, như ba bánh của xe ba bánh.",
+          "description_en": "Number 3 – comes after 2, like the wheels on a tricycle.",
+          "example": "There are three books on the desk.",
+          "example_vi": "Có 3 quyển sách trên bàn."
+        },
+        {
+          "en": "four",
+          "vi": "bốn",
+          "description": "Số 4 – đứng sau số 3, như bốn chân của con chó hay cái bàn.",
+          "description_en": "Number 4 – comes after 3, like the legs of a dog or a table.",
+          "example": "A table has four legs.",
+          "example_vi": "Cái bàn có 4 chân."
+        },
+        {
+          "en": "five",
+          "vi": "năm",
+          "description": "Số 5 – đứng sau số 4, bằng số ngón tay trên một bàn tay.",
+          "description_en": "Number 5 – comes after 4, the same as the fingers on a hand.",
+          "example": "I have five fingers on each hand.",
+          "example_vi": "Mỗi tay tôi có 5 ngón."
+        },
+        {
+          "en": "six",
+          "vi": "sáu",
+          "description": "Số 6 – đứng sau số 5, nhiều hơn số 5 một đơn vị.",
+          "description_en": "Number 6 – comes after 5, which is 1 more than 5.",
+          "example": "We have six students in the class.",
+          "example_vi": "Lớp chúng tôi có 6 học sinh."
+        },
+        {
+          "en": "seven",
+          "vi": "bảy",
+          "description": "Số 7 – đứng sau số 6, bằng số ngày trong một tuần.",
+          "description_en": "Number 7 – comes after 6, the same as the days in a week.",
+          "example": "There are seven days in a week.",
+          "example_vi": "Một tuần có 7 ngày."
+        },
+        {
+          "en": "eight",
+          "vi": "tám",
+          "description": "Số 8 – đứng sau số 7, như con bạch tuộc có tám cái chân.",
+          "description_en": "Number 8 – comes after 7, like the arms of an octopus.",
+          "example": "He wakes up at eight o'clock.",
+          "example_vi": "Anh ấy thức dậy lúc 8 giờ."
+        },
+        {
+          "en": "nine",
+          "vi": "chín",
+          "description": "Số 9 – đứng sau số 8, ngay trước số 10.",
+          "description_en": "Number 9 – comes after 8, just before 10.",
+          "example": "My brother is nine years old.",
+          "example_vi": "Em trai tôi 9 tuổi."
+        },
+        {
+          "en": "ten",
+          "vi": "mười",
+          "description": "Số 10 – đứng sau số 9, bằng số ngón tay của cả hai bàn tay.",
+          "description_en": "Number 10 – comes after 9, the same as all the fingers on both hands.",
+          "example": "I can count to ten.",
+          "example_vi": "Tôi có thể đếm đến 10."
+        }
+      ]
+    },
+    {
+      "id": "colors",
+      "name": "Colors",
+      "name_vi": "Màu sắc",
+      "words": [
+        {
+          "en": "red",
+          "vi": "đỏ",
+          "description": "Màu đỏ – màu của quả dâu tây chín, quả cà chua và trái tim.",
+          "description_en": "The color of ripe strawberries, tomatoes and hearts.",
+          "example": "The apple is red.",
+          "example_vi": "Quả táo màu đỏ."
+        },
+        {
+          "en": "blue",
+          "vi": "xanh dương",
+          "description": "Màu xanh dương – màu của bầu trời trong và biển cả.",
+          "description_en": "The color of a clear sky and the sea.",
+          "example": "The sky is blue.",
+          "example_vi": "Bầu trời màu xanh dương."
+        },
+        {
+          "en": "green",
+          "vi": "xanh lá",
+          "description": "Màu xanh lá – màu của lá cây và cỏ.",
+          "description_en": "The color of leaves and grass.",
+          "example": "The grass is green.",
+          "example_vi": "Cỏ màu xanh lá."
+        },
+        {
+          "en": "yellow",
+          "vi": "vàng",
+          "description": "Màu vàng – màu của mặt trời và quả chuối chín.",
+          "description_en": "The color of the sun and a ripe banana.",
+          "example": "The sun is yellow.",
+          "example_vi": "Mặt trời màu vàng."
+        },
+        {
+          "en": "orange",
+          "vi": "cam",
+          "description": "Màu cam – màu của củ cà rốt và quả bí ngô.",
+          "description_en": "The color of a carrot and a pumpkin.",
+          "example": "She wears an orange shirt.",
+          "example_vi": "Cô ấy mặc áo màu cam."
+        },
+        {
+          "en": "purple",
+          "vi": "tím",
+          "description": "Màu tím – màu của quả nho chín và hoa oải hương.",
+          "description_en": "The color of grapes and lavender flowers.",
+          "example": "I like purple flowers.",
+          "example_vi": "Tôi thích hoa màu tím."
+        },
+        {
+          "en": "pink",
+          "vi": "hồng",
+          "description": "Màu hồng – màu của hoa đào và kẹo bông.",
+          "description_en": "The color of cherry blossoms and cotton candy.",
+          "example": "Her bag is pink.",
+          "example_vi": "Cặp của cô ấy màu hồng."
+        },
+        {
+          "en": "black",
+          "vi": "đen",
+          "description": "Màu đen – màu của bầu trời ban đêm và than củi.",
+          "description_en": "The color of the night sky and coal.",
+          "example": "The cat is black.",
+          "example_vi": "Con mèo màu đen."
+        },
+        {
+          "en": "white",
+          "vi": "trắng",
+          "description": "Màu trắng – màu của tuyết và sữa.",
+          "description_en": "The color of snow and milk.",
+          "example": "Snow is white.",
+          "example_vi": "Tuyết màu trắng."
+        },
+        {
+          "en": "brown",
+          "vi": "nâu",
+          "description": "Màu nâu – màu của đất, thân cây và sô-cô-la.",
+          "description_en": "The color of soil, tree trunks and chocolate.",
+          "example": "The dog is brown.",
+          "example_vi": "Con chó màu nâu."
+        },
+        {
+          "en": "gray",
+          "vi": "xám",
+          "description": "Màu xám – màu của đám mây mưa và da con voi.",
+          "description_en": "The color of rain clouds and an elephant's skin.",
+          "example": "The elephant is gray.",
+          "example_vi": "Con voi màu xám."
+        }
+      ]
+    },
+    {
+      "id": "fruits",
+      "name": "Fruits",
+      "name_vi": "Trái cây",
+      "words": [
+        {
+          "en": "apple",
+          "vi": "táo",
+          "description": "Quả táo – quả tròn, vỏ đỏ hoặc xanh, ăn giòn và ngọt.",
+          "description_en": "A round fruit with red or green skin that is crunchy and sweet.",
+          "example": "I have an apple.",
+          "example_vi": "Tôi có 1 quả táo."
+        },
+        {
+          "en": "banana",
+          "vi": "chuối",
+          "description": "Quả chuối – quả dài, hơi cong, vỏ vàng, ruột mềm; khỉ rất thích ăn.",
+          "description_en": "A long, curved yellow fruit with a soft inside; monkeys love it.",
+          "example": "Monkeys love bananas.",
+          "example_vi": "Khỉ rất thích chuối."
+        },
+        {
+          "en": "orange",
+          "vi": "cam",
+          "description": "Quả cam – quả tròn, vỏ dày màu cam, nhiều nước, vị chua ngọt.",
+          "description_en": "A round, juicy fruit with a thick peel and a sweet-sour taste.",
+          "example": "I drink orange juice every morning.",
+          "example_vi": "Tôi uống nước cam mỗi sáng."
+        },
+        {
+          "en": "grape",
+          "vi": "nho",
+          "description": "Quả nho – quả nhỏ mọc thành chùm, vị ngọt, dùng làm nước ép.",
+          "description_en": "Small round fruits that grow in bunches and taste sweet.",
+          "example": "These grapes are sweet.",
+          "example_vi": "Những quả nho này ngọt."
+        },
+        {
+          "en": "mango",
+          "vi": "xoài",
+          "description": "Quả xoài – quả vùng nhiệt đới, ruột vàng, thơm và ngọt.",
+          "description_en": "A tropical fruit with yellow, sweet and fragrant flesh.",
+          "example": "She eats a mango.",
+          "example_vi": "Cô ấy ăn một quả xoài."
+        },
+        {
+          "en": "pineapple",
+          "vi": "dứa",
+          "description": "Quả dứa (thơm) – quả có vỏ gai và chùm lá trên đầu, vị chua ngọt.",
+          "description_en": "A tropical fruit with spiky skin and leaves on top, sweet and sour.",
+          "example": "The pineapple is sour.",
+          "example_vi": "Quả dứa chua."
+        },
+        {
+          "en": "watermelon",
+          "vi": "dưa hấu",
+          "description": "Quả dưa hấu – quả to, vỏ xanh, ruột đỏ mọng nước, ăn mát vào mùa hè.",
+          "description_en": "A big fruit with green skin and juicy red inside, great on hot days.",
+          "example": "We eat watermelon in summer.",
+          "example_vi": "Chúng tôi ăn dưa hấu vào mùa hè."
+        },
+        {
+          "en": "strawberry",
+          "vi": "dâu tây",
+          "description": "Quả dâu tây – quả nhỏ màu đỏ, hình trái tim, có hạt nhỏ bên ngoài.",
+          "description_en": "A small, red, heart-shaped fruit with tiny seeds on the outside.",
+          "example": "I like strawberry cake.",
+          "example_vi": "Tôi thích bánh dâu tây."
+        },
+        {
+          "en": "lemon",
+          "vi": "chanh vàng",
+          "description": "Quả chanh vàng – quả màu vàng, rất chua, dùng làm nước chanh.",
+          "description_en": "A yellow fruit that is very sour, used to make a cool drink.",
+          "example": "This lemon is very sour.",
+          "example_vi": "Quả chanh này rất chua."
+        },
+        {
+          "en": "peach",
+          "vi": "đào",
+          "description": "Quả đào – quả tròn, vỏ mịn có lông tơ, ruột mềm và ngọt.",
+          "description_en": "A round fruit with soft fuzzy skin and sweet, juicy flesh.",
+          "example": "The peach is soft.",
+          "example_vi": "Quả đào mềm."
+        },
+        {
+          "en": "pear",
+          "vi": "lê",
+          "description": "Quả lê – quả hình giống cái chuông, ruột giòn, ngọt và nhiều nước.",
+          "description_en": "A bell-shaped fruit that is crisp, sweet and juicy.",
+          "example": "He gives me a pear.",
+          "example_vi": "Anh ấy đưa tôi một quả lê."
+        },
+        {
+          "en": "coconut",
+          "vi": "dừa",
+          "description": "Quả dừa – quả to, vỏ cứng, bên trong có nước dừa ngọt mát.",
+          "description_en": "A big fruit with a hard shell and sweet water inside.",
+          "example": "I drink coconut water.",
+          "example_vi": "Tôi uống nước dừa."
+        }
+      ]
+    },
+    {
+      "id": "animals",
+      "name": "Animals",
+      "name_vi": "Con vật",
+      "words": [
+        {
+          "en": "dog",
+          "vi": "chó",
+          "description": "Con chó – vật nuôi trung thành, biết sủa và giữ nhà.",
+          "description_en": "A loyal pet that barks and guards the house.",
+          "example": "The dog is running in the garden.",
+          "example_vi": "Con chó đang chạy trong vườn."
+        },
+        {
+          "en": "cat",
+          "vi": "mèo",
+          "description": "Con mèo – vật nuôi nhỏ, lông mềm, kêu 'meo meo' và bắt chuột.",
+          "description_en": "A small pet with soft fur that says 'meow' and catches mice.",
+          "example": "The cat is sleeping on the sofa.",
+          "example_vi": "Con mèo đang ngủ trên ghế sofa."
+        },
+        {
+          "en": "bird",
+          "vi": "chim",
+          "description": "Con chim – động vật có cánh và lông vũ, biết bay và hót.",
+          "description_en": "An animal with wings and feathers that can fly and sing.",
+          "example": "A bird is singing in the tree.",
+          "example_vi": "Một con chim đang hót trên cây."
+        },
+        {
+          "en": "fish",
+          "vi": "cá",
+          "description": "Con cá – động vật sống dưới nước, bơi bằng vây và thở bằng mang.",
+          "description_en": "An animal that lives in water and swims with fins.",
+          "example": "The fish swims in the water.",
+          "example_vi": "Con cá bơi trong nước."
+        },
+        {
+          "en": "horse",
+          "vi": "ngựa",
+          "description": "Con ngựa – động vật to, chạy rất nhanh, con người có thể cưỡi.",
+          "description_en": "A big, fast animal that people can ride.",
+          "example": "The horse runs very fast.",
+          "example_vi": "Con ngựa chạy rất nhanh."
+        },
+        {
+          "en": "cow",
+          "vi": "bò",
+          "description": "Con bò – động vật nuôi ở trang trại, cho chúng ta sữa.",
+          "description_en": "A farm animal that gives us milk.",
+          "example": "The cow gives us milk.",
+          "example_vi": "Con bò cho chúng ta sữa."
+        },
+        {
+          "en": "pig",
+          "vi": "heo",
+          "description": "Con heo (lợn) – động vật nuôi ở trang trại, thân tròn, mũi to, kêu ủn ỉn.",
+          "description_en": "A round farm animal with a snout that says 'oink'.",
+          "example": "The pig is on the farm.",
+          "example_vi": "Con heo ở trong trang trại."
+        },
+        {
+          "en": "chicken",
+          "vi": "gà",
+          "description": "Con gà – gia cầm nuôi ở trang trại, đẻ trứng cho chúng ta ăn.",
+          "description_en": "A farm bird that lays eggs for us to eat.",
+          "example": "The chicken lays eggs.",
+          "example_vi": "Con gà đẻ trứng."
+        },
+        {
+          "en": "duck",
+          "vi": "vịt",
+          "description": "Con vịt – chim nuôi có mỏ dẹt, chân có màng, rất thích bơi.",
+          "description_en": "A bird with a flat beak and webbed feet that loves to swim.",
+          "example": "The duck is on the lake.",
+          "example_vi": "Con vịt ở trên hồ."
+        },
+        {
+          "en": "rabbit",
+          "vi": "thỏ",
+          "description": "Con thỏ – động vật nhỏ, tai dài, nhảy giỏi và thích ăn cà rốt.",
+          "description_en": "A small animal with long ears that hops and loves carrots.",
+          "example": "The rabbit eats a carrot.",
+          "example_vi": "Con thỏ ăn một củ cà rốt."
+        },
+        {
+          "en": "elephant",
+          "vi": "voi",
+          "description": "Con voi – động vật rất to, có vòi dài và hai chiếc ngà.",
+          "description_en": "A very big animal with a long trunk and two tusks.",
+          "example": "The elephant is very big.",
+          "example_vi": "Con voi rất to."
+        },
+        {
+          "en": "tiger",
+          "vi": "hổ",
+          "description": "Con hổ (cọp) – loài thú dữ to lớn, lông vàng có vằn đen.",
+          "description_en": "A large wild cat with orange fur and black stripes.",
+          "example": "The tiger is dangerous.",
+          "example_vi": "Con hổ rất nguy hiểm."
+        },
+        {
+          "en": "monkey",
+          "vi": "khỉ",
+          "description": "Con khỉ – động vật nhanh nhẹn, thích leo cây và ăn chuối.",
+          "description_en": "A clever animal that climbs trees and loves bananas.",
+          "example": "The monkey climbs the tree.",
+          "example_vi": "Con khỉ trèo lên cây."
+        }
+      ]
+    },
+    {
+      "id": "family",
+      "name": "Family",
+      "name_vi": "Gia đình",
+      "words": [
+        {
+          "en": "father",
+          "vi": "bố",
+          "description": "Bố (ba) – người đàn ông sinh ra và nuôi dạy con cái.",
+          "description_en": "A man who is a parent to his children.",
+          "example": "My father works in a hospital.",
+          "example_vi": "Bố tôi làm việc ở bệnh viện."
+        },
+        {
+          "en": "mother",
+          "vi": "mẹ",
+          "description": "Mẹ – người phụ nữ sinh ra và chăm sóc con cái.",
+          "description_en": "A woman who is a parent to her children.",
+          "example": "My mother cooks dinner.",
+          "example_vi": "Mẹ tôi nấu bữa tối."
+        },
+        {
+          "en": "brother",
+          "vi": "anh/em trai",
+          "description": "Anh/em trai – bạn nam có cùng bố mẹ với bé.",
+          "description_en": "A boy who has the same parents as you.",
+          "example": "I have one brother.",
+          "example_vi": "Tôi có một người anh/em trai."
+        },
+        {
+          "en": "sister",
+          "vi": "chị/em gái",
+          "description": "Chị/em gái – bạn nữ có cùng bố mẹ với bé.",
+          "description_en": "A girl who has the same parents as you.",
+          "example": "My sister likes music.",
+          "example_vi": "Chị/em gái tôi thích âm nhạc."
+        },
+        {
+          "en": "grandfather",
+          "vi": "ông",
+          "description": "Ông – bố của bố hoặc bố của mẹ.",
+          "description_en": "The father of your mom or dad.",
+          "example": "My grandfather tells me stories.",
+          "example_vi": "Ông tôi kể chuyện cho tôi nghe."
+        },
+        {
+          "en": "grandmother",
+          "vi": "bà",
+          "description": "Bà – mẹ của bố hoặc mẹ của mẹ.",
+          "description_en": "The mother of your mom or dad.",
+          "example": "My grandmother makes delicious cakes.",
+          "example_vi": "Bà tôi làm bánh rất ngon."
+        },
+        {
+          "en": "uncle",
+          "vi": "chú/bác/cậu",
+          "description": "Chú/bác/cậu – anh hoặc em trai của bố mẹ.",
+          "description_en": "The brother of your mom or dad.",
+          "example": "My uncle lives in Hanoi.",
+          "example_vi": "Chú tôi sống ở Hà Nội."
+        },
+        {
+          "en": "aunt",
+          "vi": "cô/dì/thím",
+          "description": "Cô/dì/thím – chị hoặc em gái của bố mẹ.",
+          "description_en": "The sister of your mom or dad.",
+          "example": "My aunt visits us on Sunday.",
+          "example_vi": "Dì tôi đến thăm chúng tôi vào Chủ nhật."
+        },
+        {
+          "en": "cousin",
+          "vi": "anh/chị/em họ",
+          "description": "Anh/chị/em họ – con của chú, bác, cô, dì hoặc cậu của bé.",
+          "description_en": "The child of your uncle or aunt.",
+          "example": "My cousin is the same age as me.",
+          "example_vi": "Anh họ tôi bằng tuổi tôi."
+        }
+      ]
+    },
+    {
+      "id": "body_parts",
+      "name": "Body Parts",
+      "name_vi": "Bộ phận cơ thể",
+      "words": [
+        {
+          "en": "head",
+          "vi": "đầu",
+          "description": "Cái đầu – phần trên cùng của cơ thể, có mắt, mũi và miệng.",
+          "description_en": "The top part of your body, with your eyes, nose and mouth.",
+          "example": "My head hurts.",
+          "example_vi": "Đầu tôi bị đau."
+        },
+        {
+          "en": "eye",
+          "vi": "mắt",
+          "description": "Mắt – bộ phận để nhìn mọi vật xung quanh.",
+          "description_en": "The part of the body we use to see.",
+          "example": "She has blue eyes.",
+          "example_vi": "Cô ấy có đôi mắt xanh."
+        },
+        {
+          "en": "ear",
+          "vi": "tai",
+          "description": "Tai – bộ phận để nghe âm thanh.",
+          "description_en": "The part of the body we use to hear sounds.",
+          "example": "I hear with my ears.",
+          "example_vi": "Tôi nghe bằng tai."
+        },
+        {
+          "en": "nose",
+          "vi": "mũi",
+          "description": "Mũi – bộ phận để ngửi mùi và thở.",
+          "description_en": "The part of the body we use to smell and breathe.",
+          "example": "I smell with my nose.",
+          "example_vi": "Tôi ngửi bằng mũi."
+        },
+        {
+          "en": "mouth",
+          "vi": "miệng",
+          "description": "Miệng – bộ phận để ăn, uống và nói chuyện.",
+          "description_en": "The part of the body we use to eat, drink and talk.",
+          "example": "Open your mouth, please.",
+          "example_vi": "Làm ơn hãy mở miệng ra."
+        },
+        {
+          "en": "hand",
+          "vi": "bàn tay",
+          "description": "Bàn tay – phần cuối cánh tay, có năm ngón để cầm nắm.",
+          "description_en": "The part at the end of your arm with five fingers for holding things.",
+          "example": "Wash your hands before eating.",
+          "example_vi": "Hãy rửa tay trước khi ăn."
+        },
+        {
+          "en": "arm",
+          "vi": "cánh tay",
+          "description": "Cánh tay – phần nối từ vai đến bàn tay.",
+          "description_en": "The part of the body from your shoulder to your hand.",
+          "example": "He broke his arm.",
+          "example_vi": "Anh ấy bị gãy tay."
+        },
+        {
+          "en": "leg",
+          "vi": "chân",
+          "description": "Cái chân – phần từ hông đến bàn chân, giúp bé đi và chạy.",
+          "description_en": "The part of the body from your hip to your foot that helps you walk and run.",
+          "example": "My legs are tired.",
+          "example_vi": "Chân tôi mỏi."
+        },
+        {
+          "en": "foot",
+          "vi": "bàn chân",
+          "description": "Bàn chân – phần dưới cùng của cơ thể, có năm ngón, dùng để đứng và đi.",
+          "description_en": "The part at the end of your leg, with five toes, for standing and walking.",
+          "example": "My left foot hurts.",
+          "example_vi": "Bàn chân trái của tôi bị đau."
+        },
+        {
+          "en": "hair",
+          "vi": "tóc",
+          "description": "Mái tóc – sợi mọc trên đầu, có thể dài hoặc ngắn, nhiều màu.",
+          "description_en": "Thin strands that grow on your head and can be long or short.",
+          "example": "She has long hair.",
+          "example_vi": "Cô ấy có mái tóc dài."
+        }
+      ]
+    },
+    {
+      "id": "vegetables",
+      "name": "Vegetables",
+      "name_vi": "Rau củ",
+      "words": [
+        {
+          "en": "carrot",
+          "vi": "cà rốt",
+          "description": "Củ cà rốt – củ màu cam, mọc dưới đất, giòn và tốt cho mắt.",
+          "description_en": "A crunchy orange root that grows underground and is good for your eyes.",
+          "example": "Rabbits like carrots.",
+          "example_vi": "Thỏ thích cà rốt."
+        },
+        {
+          "en": "potato",
+          "vi": "khoai tây",
+          "description": "Củ khoai tây – củ tròn mọc dưới đất, có thể luộc, chiên hoặc nghiền.",
+          "description_en": "A round vegetable that grows underground and can be boiled or fried.",
+          "example": "I eat potatoes for lunch.",
+          "example_vi": "Tôi ăn khoai tây vào bữa trưa."
+        },
+        {
+          "en": "tomato",
+          "vi": "cà chua",
+          "description": "Quả cà chua – quả tròn, màu đỏ, mọng nước, dùng trong salad và nấu ăn.",
+          "description_en": "A round, red, juicy fruit that we use in salads and cooking.",
+          "example": "Put a tomato in the salad.",
+          "example_vi": "Cho một quả cà chua vào món salad."
+        },
+        {
+          "en": "onion",
+          "vi": "hành tây",
+          "description": "Củ hành tây – củ tròn có nhiều lớp, mùi nồng và làm cay mắt khi cắt.",
+          "description_en": "A round vegetable with many layers that makes your eyes water when cut.",
+          "example": "Onions make me cry.",
+          "example_vi": "Hành tây làm tôi chảy nước mắt."
+        },
+        {
+          "en": "cucumber",
+          "vi": "dưa leo",
+          "description": "Quả dưa leo (dưa chuột) – quả dài, màu xanh, giòn và mát.",
+          "description_en": "A long green vegetable that is crunchy and cool.",
+          "example": "I like cucumber in my sandwich.",
+          "example_vi": "Tôi thích dưa leo trong bánh mì kẹp."
+        },
+        {
+          "en": "cabbage",
+          "vi": "bắp cải",
+          "description": "Bắp cải – rau lá tròn, nhiều lớp lá xếp chặt, màu xanh nhạt.",
+          "description_en": "A round leafy vegetable with tightly packed pale green leaves.",
+          "example": "My mom buys a cabbage.",
+          "example_vi": "Mẹ tôi mua một bắp cải."
+        },
+        {
+          "en": "corn",
+          "vi": "ngô",
+          "description": "Bắp ngô – cây có nhiều hạt vàng xếp trên lõi, ăn luộc hoặc nướng.",
+          "description_en": "A plant with many yellow kernels on a cob, eaten boiled or grilled.",
+          "example": "We eat corn in summer.",
+          "example_vi": "Chúng tôi ăn bắp vào mùa hè."
+        },
+        {
+          "en": "pumpkin",
+          "vi": "bí ngô",
+          "description": "Quả bí ngô – quả to, tròn, vỏ màu cam, hay được khắc đèn vào lễ Halloween.",
+          "description_en": "A big, round orange vegetable often carved into lanterns at Halloween.",
+          "example": "The pumpkin is orange.",
+          "example_vi": "Quả bí ngô màu cam."
+        }
+      ]
+    },
+    {
+      "id": "days_of_week",
+      "name": "Days of the Week",
+      "name_vi": "Các ngày trong tuần",
+      "words": [
+        {
+          "en": "Monday",
+          "vi": "thứ Hai",
+          "description": "Thứ Hai – ngày đầu tiên của tuần đi học, sau ngày Chủ nhật.",
+          "description_en": "The first school day of the week, after Sunday.",
+          "example": "I go to school on Monday.",
+          "example_vi": "Tôi đi học vào thứ Hai."
+        },
+        {
+          "en": "Tuesday",
+          "vi": "thứ Ba",
+          "description": "Thứ Ba – ngày sau thứ Hai và trước thứ Tư.",
+          "description_en": "The day after Monday and before Wednesday.",
+          "example": "We have English class on Tuesday.",
+          "example_vi": "Chúng tôi có lớp tiếng Anh vào thứ Ba."
+        },
+        {
+          "en": "Wednesday",
+          "vi": "thứ Tư",
+          "description": "Thứ Tư – ngày ở giữa tuần, sau thứ Ba và trước thứ Năm.",
+          "description_en": "The middle day of the school week, after Tuesday and before Thursday.",
+          "example": "Wednesday is the middle of the week.",
+          "example_vi": "Thứ Tư là giữa tuần."
+        },
+        {
+          "en": "Thursday",
+          "vi": "thứ Năm",
+          "description": "Thứ Năm – ngày sau thứ Tư và trước thứ Sáu.",
+          "description_en": "The day after Wednesday and before Friday.",
+          "example": "I play football on Thursday.",
+          "example_vi": "Tôi chơi bóng đá vào thứ Năm."
+        },
+        {
+          "en": "Friday",
+          "vi": "thứ Sáu",
+          "description": "Thứ Sáu – ngày cuối cùng đi học, ngày mai là cuối tuần.",
+          "description_en": "The last school day of the week; tomorrow is the weekend.",
+          "example": "Friday is my favorite day.",
+          "example_vi": "Thứ Sáu là ngày tôi thích nhất."
+        },
+        {
+          "en": "Saturday",
+          "vi": "thứ Bảy",
+          "description": "Thứ Bảy – ngày đầu của cuối tuần, bé được nghỉ học.",
+          "description_en": "The first day of the weekend, when you can rest from school.",
+          "example": "We go shopping on Saturday.",
+          "example_vi": "Chúng tôi đi mua sắm vào thứ Bảy."
+        },
+        {
+          "en": "Sunday",
+          "vi": "Chủ nhật",
+          "description": "Chủ nhật – ngày cuối của tuần, cả nhà thường nghỉ ngơi.",
+          "description_en": "The last day of the week, when families often rest together.",
+          "example": "I rest at home on Sunday.",
+          "example_vi": "Tôi nghỉ ngơi ở nhà vào Chủ nhật."
+        }
+      ]
+    },
+    {
+      "id": "weather",
+      "name": "Weather",
+      "name_vi": "Thời tiết",
+      "words": [
+        {
+          "en": "sunny",
+          "vi": "nắng",
+          "description": "Trời nắng – mặt trời chiếu sáng, trời sáng và ấm.",
+          "description_en": "The sun is shining and the sky is bright and warm.",
+          "example": "It is sunny today.",
+          "example_vi": "Hôm nay trời nắng."
+        },
+        {
+          "en": "rainy",
+          "vi": "mưa",
+          "description": "Trời mưa – nước rơi từ mây xuống, bé cần mang ô hoặc áo mưa.",
+          "description_en": "Water falls from the clouds, so you need an umbrella.",
+          "example": "It is rainy in the morning.",
+          "example_vi": "Buổi sáng trời mưa."
+        },
+        {
+          "en": "cloudy",
+          "vi": "nhiều mây",
+          "description": "Trời nhiều mây – mây phủ kín bầu trời, không thấy mặt trời.",
+          "description_en": "Clouds cover the sky and you cannot see the sun.",
+          "example": "The sky is cloudy.",
+          "example_vi": "Bầu trời nhiều mây."
+        },
+        {
+          "en": "windy",
+          "vi": "có gió",
+          "description": "Trời có gió – gió thổi mạnh, làm lá bay và diều bay cao.",
+          "description_en": "The wind blows strongly, making leaves move and kites fly high.",
+          "example": "It is very windy today.",
+          "example_vi": "Hôm nay trời rất nhiều gió."
+        },
+        {
+          "en": "snowy",
+          "vi": "có tuyết",
+          "description": "Trời có tuyết – những bông tuyết trắng rơi xuống, rất lạnh.",
+          "description_en": "White flakes fall from the sky and it is very cold.",
+          "example": "It is snowy in winter.",
+          "example_vi": "Mùa đông trời có tuyết."
+        },
+        {
+          "en": "hot",
+          "vi": "nóng",
+          "description": "Nóng – nhiệt độ cao, khiến ta đổ mồ hôi và muốn uống nước mát.",
+          "description_en": "Having a high temperature; it makes you sweat and want cool water.",
+          "example": "It is hot in summer.",
+          "example_vi": "Mùa hè trời nóng."
+        },
+        {
+          "en": "cold",
+          "vi": "lạnh",
+          "description": "Lạnh – nhiệt độ thấp, ta cần mặc áo ấm.",
+          "description_en": "Having a low temperature; you need warm clothes.",
+          "example": "It is cold in winter.",
+          "example_vi": "Mùa đông trời lạnh."
+        },
+        {
+          "en": "storm",
+          "vi": "bão",
+          "description": "Cơn bão – gió rất mạnh kèm mưa lớn, sấm và chớp, rất nguy hiểm.",
+          "description_en": "Very strong wind with heavy rain, thunder and lightning.",
+          "example": "A big storm is coming.",
+          "example_vi": "Một cơn bão lớn đang đến."
+        }
+      ]
+    },
+    {
+      "id": "school",
+      "name": "School Objects",
+      "name_vi": "Đồ dùng học tập",
+      "words": [
+        {
+          "en": "book",
+          "vi": "sách",
+          "description": "Quyển sách – nhiều trang giấy có chữ và hình, dùng để đọc và học.",
+          "description_en": "Many pages with words and pictures that we read and learn from.",
+          "example": "I read a book every night.",
+          "example_vi": "Tôi đọc một quyển sách mỗi tối."
+        },
+        {
+          "en": "pen",
+          "vi": "bút mực",
+          "description": "Cây bút mực – dụng cụ dùng mực để viết chữ.",
+          "description_en": "A tool that uses ink for writing.",
+          "example": "Can I borrow your pen?",
+          "example_vi": "Tôi mượn bút của bạn được không?"
+        },
+        {
+          "en": "pencil",
+          "vi": "bút chì",
+          "description": "Cây bút chì – dụng cụ viết hoặc vẽ bằng ruột chì, có thể tẩy được.",
+          "description_en": "A tool for writing or drawing that you can erase.",
+          "example": "I draw with a pencil.",
+          "example_vi": "Tôi vẽ bằng bút chì."
+        },
+        {
+          "en": "ruler",
+          "vi": "thước kẻ",
+          "description": "Cây thước kẻ – dụng cụ để đo độ dài và kẻ đường thẳng.",
+          "description_en": "A tool for measuring length and drawing straight lines.",
+          "example": "Use a ruler to draw a line.",
+          "example_vi": "Dùng thước để kẻ một đường thẳng."
+        },
+        {
+          "en": "eraser",
+          "vi": "cục tẩy",
+          "description": "Cục tẩy – dụng cụ để xóa nét bút chì viết sai.",
+          "description_en": "A tool that rubs out pencil mistakes.",
+          "example": "I need an eraser.",
+          "example_vi": "Tôi cần một cục tẩy."
+        },
+        {
+          "en": "bag",
+          "vi": "cặp sách",
+          "description": "Cặp sách (túi) – dùng để đựng sách vở và đồ dùng khi đến trường.",
+          "description_en": "Something you use to carry books and things to school.",
+          "example": "My bag is heavy.",
+          "example_vi": "Cặp của tôi nặng."
+        },
+        {
+          "en": "notebook",
+          "vi": "vở",
+          "description": "Quyển vở – nhiều trang giấy trắng hoặc kẻ dòng để bé viết bài.",
+          "description_en": "A set of blank or lined pages where you write your lessons.",
+          "example": "I write in my notebook.",
+          "example_vi": "Tôi viết vào vở."
+        },
+        {
+          "en": "desk",
+          "vi": "bàn học",
+          "description": "Bàn học – cái bàn để bé ngồi viết, đọc sách và làm bài.",
+          "description_en": "A table where you sit to write, read and do homework.",
+          "example": "My books are on the desk.",
+          "example_vi": "Sách của tôi ở trên bàn học."
+        },
+        {
+          "en": "teacher",
+          "vi": "giáo viên",
+          "description": "Giáo viên – người dạy học sinh ở trường.",
+          "description_en": "A person who helps students learn at school.",
+          "example": "The teacher is kind.",
+          "example_vi": "Cô giáo rất tốt bụng."
+        }
+      ]
+    }
+  ]
+}

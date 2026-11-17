@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bé học từ vựng tiếng Anh</title>
+<style>
+  :root {
+    --bg: #fff7e6; --card: #fff; --primary: #ff7a59; --primary-d: #e5603f;
+    --blue: #4a90e2; --green: #3bb273; --red: #e0524d; --text: #333;
+    --shadow: 0 4px 14px rgba(0,0,0,.12);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh; background: var(--bg); color: var(--text);
+    font-family: "Segoe UI", "Comic Sans MS", system-ui, sans-serif;
+    display: flex; justify-content: center;
+  }
+  #app { width: 100%; max-width: 900px; padding: 16px; }
+  h1 { text-align: center; color: var(--primary); font-size: clamp(1.6rem, 5vw, 2.4rem); margin: 8px 0 20px; }
+  h2 { text-align: center; font-size: clamp(1.3rem, 4vw, 1.8rem); margin: 8px 0 16px; }
+  .total { text-align: center; font-size: 1.3rem; margin-bottom: 16px; }
+  .daily-card { background: #fff; border-radius: 20px; box-shadow: var(--shadow); padding: 18px; margin: 0 0 18px; }
+  .daily-card h2 { color: var(--blue); margin: 0 0 14px; }
+  .daily-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; text-align: center; }
+  .daily-stat { background: #f5f8ff; border-radius: 14px; padding: 12px 8px; }
+  .daily-stat strong { display: block; font-size: 1.25rem; }
+  .daily-stat span { display: block; color: #777; font-size: .9rem; margin-top: 4px; }
+  .daily-note { text-align: center; font-size: .85rem; color: #777; margin: 12px 0 0; }
+  .trophy { text-align: center; color: #b77900; font-size: 1.1rem; font-weight: 700; margin-top: 12px; }
+  .badges { display: flex; gap: 6px; justify-content: center; flex-wrap: wrap; margin-top: 8px; min-height: 22px; }
+  .badge { background: #fff1d6; border-radius: 12px; padding: 2px 8px; font-size: .85rem; font-weight: 600; }
+  .btn.small { padding: 8px 14px; font-size: .9rem; min-height: 0; }
+  .earned { text-align: center; font-size: 1.3rem; margin: 6px 0; }
+  .grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+  .topic {
+    background: var(--card); border: 0; border-radius: 20px; box-shadow: var(--shadow);
+    padding: 18px 8px; cursor: pointer; font: inherit; text-align: center;
+    transition: transform .12s;
+  }
+  .topic:hover, .topic:focus-visible { transform: translateY(-4px) scale(1.03); outline: 3px solid var(--primary); }
+  .topic .icon { font-size: 3rem; display: block; }
+  .topic .name { font-weight: 700; font-size: 1.1rem; margin-top: 6px; display: block; }
+  .topic .sub { font-size: .9rem; color: #777; }
+  .btn {
+    border: 0; border-radius: 16px; padding: 14px 22px; font: inherit; font-weight: 700;
+    font-size: 1.1rem; color: #fff; background: var(--primary); cursor: pointer;
+    box-shadow: var(--shadow); min-height: 48px;
+  }
+  .btn:hover { background: var(--primary-d); }
+  .btn.blue { background: var(--blue); } .btn.green { background: var(--green); }
+  .btn.gray { background: #8a8a8a; }
+  .btn:disabled { opacity: .45; cursor: default; }
+  .row { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin: 14px 0; }
+  .back { margin-bottom: 8px; }
+  .modes { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-top: 20px; }
+  .mode { padding: 28px 12px; font-size: 1.4rem; }
+  .mode small { display: block; font-weight: 400; font-size: .95rem; margin-top: 6px; }
+
+  .flash {
+    background: var(--card); border-radius: 26px; box-shadow: var(--shadow);
+    padding: 24px 16px; text-align: center; min-height: 300px;
+    display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 10px;
+    cursor: pointer; user-select: none;
+  }
+  .word { font-size: clamp(2.4rem, 12vw, 4.5rem); font-weight: 800; color: var(--blue); word-break: break-word; }
+  .meaning { font-size: clamp(1.6rem, 7vw, 2.6rem); color: var(--green); font-weight: 700; }
+  .desc { font-size: 1.2rem; }
+  .desc i { color: #888; display: block; font-size: 1rem; }
+  .blank { font-size: clamp(2.6rem, 13vw, 4.5rem); font-weight: 800; letter-spacing: .12em; color: var(--blue); margin: 10px 0; }
+  .clue { font-size: clamp(1.1rem, 4.5vw, 1.5rem); font-weight: 700; color: var(--green); line-height: 1.4; }
+  .answer-details { margin-top: 18px; padding: 16px; border-radius: 16px; background: #f3f8ff; text-align: left; }
+  .answer-details .word { font-size: clamp(1.8rem, 8vw, 2.8rem); text-align: center; }
+  .answer-details .meaning { font-size: 1.35rem; text-align: center; }
+  .detail-line { margin-top: 8px; line-height: 1.5; }
+  .ex { font-size: 1.15rem; color: #555; }
+  .ex i { color: #888; display: block; font-size: 1rem; }
+  .hint { color: #999; font-size: .95rem; }
+  .progress { text-align: center; color: #777; margin-bottom: 8px; font-weight: 600; }
+  .bar { height: 10px; background: #f0e2c8; border-radius: 8px; overflow: hidden; margin: 6px 0 14px; }
+  .bar > div { height: 100%; background: var(--primary); transition: width .25s; }
+
+  .q { position: relative; background: var(--card); border-radius: 26px; box-shadow: var(--shadow); padding: 22px 16px; text-align: center; }
+  .options { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); margin-top: 16px; }
+  .opt {
+    border: 3px solid #eee; background: #fafafa; border-radius: 16px; padding: 16px 10px;
+    font: inherit; font-size: 1.25rem; font-weight: 600; cursor: pointer; min-height: 56px;
+  }
+  .opt:hover:not(:disabled) { border-color: var(--blue); }
+  .opt.ok { background: #d9f5e6; border-color: var(--green); }
+  .opt.bad { background: #fde1df; border-color: var(--red); }
+  .wrong-mark {
+    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+    font-size: clamp(6rem, 30vw, 11rem); pointer-events: none; border-radius: 26px;
+    background: rgba(255,255,255,.55); animation: pop .9s ease-out forwards;
+  }
+  @keyframes pop {
+    0% { transform: scale(.3); opacity: 0; }
+    25% { transform: scale(1.15); opacity: 1; }
+    70% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(1); opacity: 0; }
+  }
+  .shake { animation: shake .4s; }
+  @keyframes shake { 25% { transform: translateX(-8px); } 75% { transform: translateX(8px); } }
+  .big { font-size: 4rem; text-align: center; }
+  .score { font-size: 2.2rem; font-weight: 800; text-align: center; color: var(--primary); }
+  .error { background: #fde1df; padding: 16px; border-radius: 14px; line-height: 1.5; }
+  code { background: #eee; padding: 2px 6px; border-radius: 6px; }
+</style>
+</head>
+<body>
+<div id="app"></div>
+
+<script>
+const ICONS = {
+  numbers: "🔢", colors: "🎨", fruits: "🍎", animals: "🐶", family: "👨‍👩‍👧",
+  body_parts: "🖐️", vegetables: "🥕", days_of_week: "📅", weather: "⛅", school: "🎒"
+};
+const app = document.getElementById("app");
+let topics = [];
+
+const shuffle = (arr) => {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+};
+const esc = (s) => String(s).replace(/[&<>"']/g, (c) =>
+  ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const definitionText = (s) => {
+  const separator = " – ";
+  const index = String(s).indexOf(separator);
+  return index < 0 ? String(s) : String(s).slice(index + separator.length);
+};
+
+function speak(text) {
+  if (!("speechSynthesis" in window)) return;
+  speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = "en-US"; u.rate = 0.85;
+  speechSynthesis.speak(u);
+}
+
+let audioCtx;
+function playWrong() {
+  try {
+    audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+    const t = audioCtx.currentTime;
+    [[300, 0], [200, 0.18]].forEach(([freq, delay]) => {
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = "sawtooth";
+      osc.frequency.value = freq;
+      gain.gain.setValueAtTime(0.25, t + delay);
+      gain.gain.exponentialRampToValueAtTime(0.001, t + delay + 0.17);
+      osc.connect(gain).connect(audioCtx.destination);
+      osc.start(t + delay);
+      osc.stop(t + delay + 0.18);
+    });
+  } catch (e) { /* audio not available */ }
+}
+
+/* ---------- Progress (localStorage) ---------- */
+const STORE_KEY = "learnEnglish.progress.v1";
+const POINTS_PER_CORRECT = 10;
+const PERFECT_BONUS = 20;
+
+function loadProgress() {
+  try {
+    const p = JSON.parse(localStorage.getItem(STORE_KEY));
+    if (p && typeof p === "object" && p.topics) return p;
+  } catch (e) { /* ignore corrupted or unavailable storage */ }
+  return { totalPoints: 0, topics: {} };
+}
+function saveProgress(p) {
+  try { localStorage.setItem(STORE_KEY, JSON.stringify(p)); } catch (e) { /* storage full or blocked */ }
+}
+function topicProgress(p, id) {
+  return (p.topics[id] = p.topics[id] || { learned: false, learnCount: 0, attempts: 0, best: null, last: null, total: 0 });
+}
+function localDateKey(date = new Date()) {
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${date.getFullYear()}-${month}-${day}`;
+}
+function todayProgress(p) {
+  const saved = p.daily;
+  if (saved && saved.date === localDateKey()) return saved;
+  return { date: localDateKey(), points: 0, correct: 0, questions: 0, quizzes: 0, perfectQuizzes: 0 };
+}
+function markLearned(topic) {
+  const p = loadProgress();
+  const t = topicProgress(p, topic.id);
+  t.learned = true;
+  t.learnCount++;
+  t.learnedAt = new Date().toISOString();
+  saveProgress(p);
+}
+function recordQuiz(topic, score, total) {
+  const p = loadProgress();
+  const t = topicProgress(p, topic.id);
+  const earned = score * POINTS_PER_CORRECT + (score === total ? PERFECT_BONUS : 0);
+  const newBest = t.best === null || score > t.best;
+  t.attempts++;
+  t.last = score;
+  t.total = total;
+  if (newBest) t.best = score;
+  t.lastAt = new Date().toISOString();
+  p.totalPoints += earned;
+  if (!p.daily || p.daily.date !== localDateKey()) {
+    p.daily = { date: localDateKey(), points: 0, correct: 0, questions: 0, quizzes: 0, perfectQuizzes: 0 };
+  }
+  p.daily.points += earned;
+  p.daily.correct += score;
+  p.daily.questions += total;
+  p.daily.quizzes++;
+  if (score === total) p.daily.perfectQuizzes++;
+  saveProgress(p);
+  return { earned, newBest, totalPoints: p.totalPoints };
+}
+
+/* ---------- Home ---------- */
+function showHome() {
+  const progress = loadProgress();
+  const daily = todayProgress(progress);
+  const accuracy = daily.questions ? Math.round((daily.correct / daily.questions) * 100) : null;
+  const rating = accuracy === null ? "Chưa kiểm tra hôm nay" : accuracy >= 80 ? "Tốt" : accuracy >= 60 ? "Khá" : "Trung bình";
+  app.innerHTML = `
+    <h1>🌈 Bé học từ vựng tiếng Anh</h1>
+    <div class="total">⭐ Tổng điểm: <b>${progress.totalPoints}</b></div>
+    <section class="daily-card" aria-label="Kết quả học hôm nay">
+      <h2>📅 Hôm nay</h2>
+      <div class="daily-stats">
+        <div class="daily-stat"><strong>⭐ ${daily.points}</strong><span>Điểm đạt được</span></div>
+        <div class="daily-stat"><strong>${rating}</strong><span>${accuracy === null ? "Chưa có bài kiểm tra" : `Độ chính xác ${accuracy}%`}</span></div>
+        <div class="daily-stat"><strong>${daily.quizzes}</strong><span>Bài kiểm tra hoàn thành</span></div>
+      </div>
+      ${daily.perfectQuizzes ? `<div class="trophy">🏆 Cúp xuất sắc! Hoàn thành ${daily.perfectQuizzes} bài đạt 100%.</div>` : ""}
+      <p class="daily-note">Đánh giá theo kết quả kiểm tra hôm nay: Tốt ≥ 80%, Khá ≥ 60%, Trung bình &lt; 60%.</p>
+    </section>
+    <div class="grid">
+      ${topics.map((t, i) => {
+        const tp = progress.topics[t.id];
+        return `
+        <button class="topic" data-i="${i}">
+          <span class="icon">${ICONS[t.id] || "📚"}</span>
+          <span class="name">${esc(t.name_vi)}</span>
+          <span class="sub">${esc(t.name)} · ${t.words.length} từ</span>
+          <span class="badges">
+            ${tp && tp.learned ? `<span class="badge">✅ Đã học</span>` : ""}
+            ${tp && tp.best !== null ? `<span class="badge">🏆 ${tp.best}/${tp.total}</span>` : ""}
+          </span>
+        </button>`;
+      }).join("")}
+    </div>
+    <div class="row"><button class="btn gray small" id="reset">Xóa tiến trình</button></div>`;
+  app.querySelectorAll(".topic").forEach((b) =>
+    b.addEventListener("click", () => showModes(topics[b.dataset.i])));
+  document.getElementById("reset").onclick = () => {
+    if (confirm("Xóa toàn bộ điểm và tiến trình học?")) {
+      try { localStorage.removeItem(STORE_KEY); } catch (e) { /* ignore */ }
+      showHome();
+    }
+  };
+}
+
+/* ---------- Mode select ---------- */
+function showModes(topic) {
+  app.innerHTML = `
+    <button class="btn gray back" id="back">← Quay lại</button>
+    <div class="big">${ICONS[topic.id] || "📚"}</div>
+    <h2>${esc(topic.name_vi)} (${esc(topic.name)})</h2>
+    <div class="modes">
+      <button class="btn blue mode" id="learn">📖 Học<small>Xem thẻ từ vựng ngẫu nhiên</small></button>
+      <button class="btn green mode" id="quiz">✏️ Kiểm tra<small>Điền chữ cái còn thiếu, ngẫu nhiên</small></button>
+    </div>`;
+  document.getElementById("back").onclick = showHome;
+  document.getElementById("learn").onclick = () => startLearn(topic);
+  document.getElementById("quiz").onclick = () => startQuiz(topic);
+}
+
+/* ---------- Learn ---------- */
+function startLearn(topic) {
+  const words = shuffle(topic.words);
+  let i = 0, flipped = false;
+
+  function render() {
+    const w = words[i];
+    app.innerHTML = `
+      <button class="btn gray back" id="back">← Chủ đề</button>
+      <div class="progress">${i + 1} / ${words.length}</div>
+      <div class="bar"><div style="width:${((i + 1) / words.length) * 100}%"></div></div>
+      <div class="flash" id="card" tabindex="0">
+        <div class="word">${esc(w.en)}</div>
+        ${flipped ? `
+          <div class="meaning">${esc(w.vi)}</div>
+          <div class="desc">${esc(definitionText(w.description))}<i>${esc(definitionText(w.description_en))}</i></div>
+          <div class="ex">${esc(w.example)}<i>${esc(w.example_vi)}</i></div>`
+          : `<div class="hint">👆 Chạm vào thẻ để xem nghĩa</div>`}
+      </div>
+      <div class="row">
+        <button class="btn gray" id="prev" ${i === 0 ? "disabled" : ""}>◀ Trước</button>
+        <button class="btn blue" id="say">🔊 Nghe</button>
+        <button class="btn" id="next">${i === words.length - 1 ? "Xong ✔" : "Tiếp ▶"}</button>
+      </div>`;
+    const flip = () => { flipped = !flipped; render(); if (flipped) speak(w.en); };
+    document.getElementById("card").onclick = flip;
+    document.getElementById("card").onkeydown = (e) => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); flip(); }
+    };
+    document.getElementById("say").onclick = () => speak(w.en);
+    document.getElementById("back").onclick = () => showModes(topic);
+    document.getElementById("prev").onclick = () => { i--; flipped = false; render(); };
+    document.getElementById("next").onclick = () => {
+      if (i === words.length - 1) {
+        markLearned(topic);
+        app.innerHTML = `
+          <div class="big">🎉</div><h2>Con đã học xong chủ đề này!</h2>
+          <div class="row">
+            <button class="btn blue" id="again">Học lại</button>
+            <button class="btn green" id="toquiz">Kiểm tra</button>
+            <button class="btn gray" id="home">Chủ đề khác</button>
+          </div>`;
+        document.getElementById("again").onclick = () => startLearn(topic);
+        document.getElementById("toquiz").onclick = () => startQuiz(topic);
+        document.getElementById("home").onclick = showHome;
+      } else { i++; flipped = false; render(); }
+    };
+  }
+  render();
+}
+
+/* ---------- Quiz ---------- */
+function startQuiz(topic) {
+  const words = shuffle(topic.words);
+  let i = 0, score = 0;
+
+  function render() {
+    const w = words[i];
+    // Hide one random letter and offer 3 letters to fill it in.
+    const letters = [...w.en].map((c, n) => (/[A-Za-z]/.test(c) ? n : -1)).filter((n) => n >= 0);
+    const pos = letters[Math.floor(Math.random() * letters.length)];
+    const answer = w.en[pos];
+    const isUpper = answer === answer.toUpperCase();
+    const pool = "abcdefghijklmnopqrstuvwxyz".split("")
+      .filter((c) => c !== answer.toLowerCase());
+    const options = shuffle([answer.toLowerCase(), ...shuffle(pool).slice(0, 2)])
+      .map((c) => (isUpper ? c.toUpperCase() : c));
+    const masked = [...w.en].map((c, n) => (n === pos ? "_" : c)).join("");
+
+    app.innerHTML = `
+      <button class="btn gray back" id="back">← Chủ đề</button>
+      <div class="progress">Câu ${i + 1} / ${words.length} · Điểm: ${score}</div>
+      <div class="bar"><div style="width:${(i / words.length) * 100}%"></div></div>
+      <div class="q">
+        <div>Đọc gợi ý tiếng Việt rồi điền chữ cái còn thiếu · Fill in the missing letter</div>
+        <div class="clue">${esc(w.description)}</div>
+        <div class="blank" id="blank">${esc(masked)}</div>
+        <button class="btn blue" id="say">🔊 Nghe</button>
+        <div class="options">
+          ${options.map((o) => `<button class="opt">${esc(o)}</button>`).join("")}
+        </div>
+        <div id="answerDetails"></div>
+      </div>
+      <div class="row" id="nextRow"></div>`;
+    document.getElementById("back").onclick = () => showModes(topic);
+    document.getElementById("say").onclick = () => speak(w.en);
+
+    const buttons = [...app.querySelectorAll(".opt")];
+    buttons.forEach((b) => b.addEventListener("click", () => {
+      const correct = b.textContent === answer;
+      if (correct) score++;
+      buttons.forEach((x) => {
+        x.disabled = true;
+        if (correct && x.textContent === answer) x.classList.add("ok");
+      });
+      const blank = document.getElementById("blank");
+      blank.textContent = w.en;
+      blank.style.color = correct ? "var(--green)" : "var(--red)";
+      document.getElementById("answerDetails").innerHTML = `
+        <div class="answer-details">
+          <div class="meaning">${esc(w.vi)}</div>
+          <div class="detail-line"><b>Ví dụ:</b> ${esc(w.example)}<br><span>${esc(w.example_vi)}</span></div>
+        </div>`;
+      if (correct) {
+        speak(w.en);
+      } else {
+        b.classList.add("bad", "shake");
+        const mark = document.createElement("div");
+        mark.className = "wrong-mark";
+        mark.textContent = "❌";
+        app.querySelector(".q").appendChild(mark);
+        playWrong();
+        setTimeout(() => speak(w.en), 450);
+      }
+      const last = i === words.length - 1;
+      document.getElementById("nextRow").innerHTML =
+        `<button class="btn" id="next">${last ? "Xem kết quả" : "Câu tiếp ▶"}</button>`;
+      document.getElementById("next").onclick = () => { if (last) result(); else { i++; render(); } };
+    }));
+  }
+
+  function result() {
+    const pct = score / words.length;
+    const { earned, newBest, totalPoints } = recordQuiz(topic, score, words.length);
+    const msg = pct === 1 ? "Tuyệt vời! 🏆" : pct >= 0.7 ? "Giỏi lắm! 👏" : pct >= 0.4 ? "Cố gắng thêm nhé! 💪" : "Con hãy học lại nhé! 📖";
+    app.innerHTML = `
+      <div class="big">${pct >= 0.7 ? "🎉" : "🌱"}</div>
+      <h2>${msg}</h2>
+      <div class="score">${score} / ${words.length}</div>
+      <div class="earned">+${earned} điểm${pct === 1 ? " (thưởng điểm tuyệt đối!)" : ""} · ⭐ Tổng: ${totalPoints}</div>
+      ${newBest ? `<div class="earned">🏅 Kỷ lục mới!</div>` : ""}
+      <div class="row">
+        <button class="btn green" id="again">Kiểm tra lại</button>
+        <button class="btn blue" id="learn">Học</button>
+        <button class="btn gray" id="home">Chủ đề khác</button>
+      </div>`;
+    document.getElementById("again").onclick = () => startQuiz(topic);
+    document.getElementById("learn").onclick = () => startLearn(topic);
+    document.getElementById("home").onclick = showHome;
+  }
+  render();
+}
+
+/* ---------- Boot ---------- */
+fetch("vocabulary_topics.json")
+  .then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); })
+  .then((data) => { topics = data.topics; showHome(); })
+  .catch(() => {
+    app.innerHTML = `
+      <h1>🌈 Bé học từ vựng tiếng Anh</h1>
+      <div class="error">Không tải được <code>vocabulary_topics.json</code>.
+      Trình duyệt chặn đọc file khi mở trực tiếp bằng <code>file://</code>.
+      Hãy chạy máy chủ cục bộ trong thư mục này, ví dụ:
+      <code>py -m http.server 8000</code> rồi mở <code>http://localhost:8000</code>.</div>`;
+  });
+</script>
+</body>
+</html>
